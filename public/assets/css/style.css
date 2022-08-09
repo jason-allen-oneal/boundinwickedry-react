@@ -1,0 +1,164 @@
+/* latin */
+@font-face {
+  font-family: 'Castoro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/castoro.woff2') format('woff2');
+}
+
+/* latin */
+@font-face {
+  font-family: 'Fredericka the Great';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/frederika.woff2') format('woff2');
+}
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Castoro", serif;
+  color: #E0FBFC;
+  background-color: #253237;
+  height: 100vh;
+  width: 100vw;
+}
+  
+main{
+	padding-top: 80px;
+}
+
+img {
+  margin: auto;
+}
+
+.border {
+  border: 1px solid #E0FBFC!important;
+}
+
+.navbar {
+  background-color: #253237;
+  border-bottom: 1px solid #E0FBFC;
+  border-left: 1px solid #E0FBFC;
+  border-right: 1px solid #E0FBFC;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.navbar-brand {
+  color: #5C6B73;
+  font-family: 'Fredericka the Great', cursive;
+}
+.navbar-toggler {
+  color: #E0FBFC;
+}
+.dropdown-menu {
+  background-color: #253237;
+}
+.dropdown-menu li a {
+  color: #C2DFE3;
+}
+
+a, a:visited {
+  color: #C2DFE3;
+}
+a:hover, a:active {
+  color: #9DB4C0;
+}
+a.nav-link, a.nav-link:visited {
+  color: #C2DFE3;
+}
+a.nav-link:hover, a.nav-link:active {
+  color: #9DB4C0;
+}
+
+.content-section {
+  padding-bottom: 180px;
+}
+section {
+  padding-bottom: 180px;
+}
+
+h2, h3 {
+  color: #5C6B73;
+  font-family: 'Fredericka the Great', cursive;
+}
+
+.modal-content {
+  background-color: #253237;
+}
+
+.btn-close {
+  color: #C2DFE3;
+}
+
+.page-item a, .page-item a:visited {
+  border-color: #8D99AE;
+  color: #0A0908;
+  background-color: #B8D5B8;
+}
+
+.page-item a:hover, .page-item a:active {
+  border-color: #B8D5B8;
+  color: #D8F793;
+  background-color: #8D99AE;
+}
+
+.page-item a.active {
+  border-color: #B8D5B8;
+  color: #D8F793;
+  background-color: #8D99AE;
+}
+
+.btn-primary {
+  border-color: #8D99AE;
+  color: #0A0908;
+  background-color: #B8D5B8;
+}
+
+.btn-primary:hover, .btn-primary:active{
+  border-color: #B8D5B8;
+  color: #D8F793;
+  background-color: #8D99AE;
+}
+
+.pagination {
+  background-color: transparent;
+}
+
+.card {
+  background-color: transparent;
+  color: #E0FBFC;
+  border: none;
+}
+
+.shop-item-container {
+  height: 26em;
+}
+
+.shop-item-image {
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+}
+
+.latest-scene-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100px;
+}
+
+footer {
+  background-color: #253237;
+  border-top: 1px solid #E0FBFC;
+  border-left: 1px solid #E0FBFC;
+  border-right: 1px solid #E0FBFC;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}

@@ -1,0 +1,30 @@
+{
+  "short_name": "BiW",
+  "name": "Bound In Wickedry",
+  "start_url": "/",
+  "background_color": "#7B7D7D",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#B2BABB",
+  "shortcuts": [
+    {
+      "name": "Blog",
+      "short_name": "Blog",
+      "description": "Bound In Wickedry Blog",
+      "url": "/blog/"
+    },
+    {
+      "name": "Gallery",
+      "short_name": "Gallery",
+      "description": "Bound In Wickedry Gallery",
+      "url": "/gallery/"
+    },
+    {
+      "name": "Shop",
+      "short_name": "Shop",
+      "description": "Bound In Wickedry Adult Store",
+      "url": "/shop/"
+    }
+  ],
+  "description": "Bound In Wickedry"
+}
