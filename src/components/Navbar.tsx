@@ -6,11 +6,9 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 import Utils from '../Utils';
-import { Socket } from 'socket.io-client';
 
 type Props = {
 	user: User;
-	socket: Socket;
 }
 
 type State = {
@@ -28,13 +26,13 @@ export default class NavBar extends React.Component<Props, State>{
 	constructor(props: Props) {
 		super(props);
 
-		this.Utils = new Utils(this.props.socket)
+		this.Utils = new Utils(window.socket)
 
 		this.state = {
 			categories: {
-				gallery: {},
-				blog: {},
-				shop: {}
+				gallery: [],
+				blog: [],
+				shop: []
 			},
 			user: this.props.user
 		}
@@ -57,17 +55,17 @@ export default class NavBar extends React.Component<Props, State>{
 						<Nav className="me-auto">
 							<Nav.Link href="#home">Home</Nav.Link>
 							<NavDropdown title="Gallery">
-								{this.state.categories.gallery.map((item: any) => (
+								{this.state.categories.gallery && this.state.categories.gallery.map((item: any) => (
 									<NavDropdown.Item key={item.id} href="/gallery/{item.slug}">{item.name}</NavDropdown.Item>
 								))}
 							</NavDropdown>
 							<NavDropdown title="Blog">
-								{this.state.categories.blog.map((item: any) => (
+								{this.state.categories.blog && this.state.categories.blog.map((item: any) => (
 									<NavDropdown.Item key={item.id} href="/blog/{item.slug}">{item.name}</NavDropdown.Item>
 								))}
 							</NavDropdown>
 							<NavDropdown title="Shop">
-								{this.state.categories.shop.map((item: any) => (
+								{this.state.categories.shop && this.state.categories.shop.map((item: any) => (
 									<NavDropdown.Item key={item.id} href="/shop/{item.slug}">{item.name}</NavDropdown.Item>
 								))}
 							</NavDropdown>

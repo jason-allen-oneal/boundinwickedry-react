@@ -10,6 +10,7 @@ export default class Utils {
 		this.socket.emit(target, input);
 		await new Promise((resolve) => {
 			this.socket.on(target + "-response", (data) => {
+				console.log(data);
 				resolve(data);
 			});
 		});

@@ -5,17 +5,21 @@ import {
 	Route
 } from "react-router-dom";
 
-import io from "socket.io-client";
-let socket = io(`http://23.234.250.103:33032`);
+import Utils from './Utils';
 
 import NavBar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './modules/Home';
-
+import Login from './components/Login';
+import Registration from './components/Registration';
 
 export default class App extends React.Component<any, any>{
+	Utils: any;
+
 	constructor(props: any) {
 		super(props);
+
+		this.Utils = new Utils(window.socket);
 
 		this.state = {
 			categories: {
@@ -27,14 +31,25 @@ export default class App extends React.Component<any, any>{
 				loggedIn: false,
 				isAdmin: false
 			}
-		}
+		};
+
+		this.handleRegister = this.handleRegister.bind(this);
+		this.handleLogin = this.handleLogin.bind(this);
+	}
+
+	async handleRegister(data: any) {
+		const results = this.Utils.request('user-register', data);
+	}
+
+	async handleLogin(data: any) {
+		const results = this.Utils.request('user-login', data);
 	}
 
 	render(): React.ReactNode {
 		return (
 			<Router>
 				<div>
-					<NavBar user={this.state.user} socket={socket} />
+					<NavBar user={this.state.user} />
 					<Routes>
 						<Route path="/gallery">
 							Gallery
@@ -46,7 +61,8 @@ export default class App extends React.Component<any, any>{
 							Shop
 						</Route>
 						<Route path="/user">
-							User
+							<Route path="register" element={<Registration onRegisterSubmit={this.handleRegister} />} />
+							<Route path="login" element={<Login onLoginSubmit={this.handleLogin} />} />
 						</Route>
 						<Route path="/">
 							<Home />
